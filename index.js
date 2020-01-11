@@ -8,9 +8,24 @@ const http = require('http')
 const https = require('https')
 const url = require('url')
 const StringDecoder = require('string_decoder').StringDecoder
-const config = require('./config');
+const config = require('./lib/config');
 const fs = require('fs');
 const _data = require('./lib/data')
+const handlers = require('./lib/handlers')
+const helpers = require('./lib/helpers')
+
+//TESTING
+//@TODO delete this
+/*
+_data.create('users','newFile',{'foo':'bar'},(err)=>console.log('this was the error', err))
+
+_data.read('users','newFile',(err,data)=> console.log('this was data', data))
+
+
+_data.update('users','newFile',{'fizz':'buzz'},(err)=> console.log('this was the error', err))
+
+_data.delete('users','newFile',(err)=> console.log('this was the error', err))
+*/
 
 // Instantiate the HTTP Server
 const httpServer = http.createServer((req, res) => {
@@ -68,7 +83,7 @@ const unifiedServer = (req,res) =>{
             'queryStringObject': queryStringObject,
             'method': method,
             'headers': headers,
-            'payload': buffer
+            'payload': helpers.parseJsonToObject(buffer)
         };
 
         // Route the request to the handler specified in the router
@@ -96,21 +111,9 @@ const unifiedServer = (req,res) =>{
 
 
 
-//Define the Handlers
-const handlers = {}
 
-//sample handler
-handlers.sample = (data, callback) => {
-// callback a http status code and a payload object
-    callback(406, {'name': 'sample handler'})
-}
-
-//not found handler
-handlers.notFound = (data, callback) => {
-    callback(404)
-}
 
 //Define a request router
 const router = {
-    'sample': handlers.sample
+    'users': handlers.users
 }
