@@ -5,7 +5,6 @@
   "author": "eadortsu",
   "private": true,
   "scripts": {
-    "build": "node index.js",
     "start": "node index.js"
   },
   "dependencies": {
