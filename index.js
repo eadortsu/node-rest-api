@@ -61,7 +61,7 @@ const httpsServer = https.createServer(httpsServerOptions,(req, res) => {
 
 
 //Start the HTTPS server
-httpsServer.listen(config.httpsPort, () => console.log('The server is up and running on https://localhost:'+config.httpsPort))
+//httpsServer.listen(config.httpsPort, () => console.log('The server is up and running on https://localhost:'+config.httpsPort))
 
 
 // All the server logic for both the http and https server
