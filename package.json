@@ -1,0 +1,21 @@
+{
+  "name": "Heny",
+  "version": "1.0.0",
+  "description": "Heny App",
+  "author": "eadortsu",
+  "private": true,
+  "engines": {
+    "node": "12.x"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon -r esm index.js --watch server",
+    "build": "cross-env NODE_ENV=production node -r esm index.js",
+    "start": "cross-env NODE_ENV=production node -r esm index.js"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  }
+}
