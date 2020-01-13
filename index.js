@@ -25,7 +25,19 @@ _data.read('users','newFile',(err,data)=> console.log('this was data', data))
 _data.update('users','newFile',{'fizz':'buzz'},(err)=> console.log('this was the error', err))
 
 _data.delete('users','newFile',(err)=> console.log('this was the error', err))
-*/
+
+
+
+ */
+_data.readAll('eits',(err,data)=> {
+    if(!err){
+        console.log('this was data', data)
+    }else{
+        console.log(err)
+    }
+})
+
+
 
 // Instantiate the HTTP Server
 const httpServer = http.createServer((req, res) => {
@@ -78,7 +90,7 @@ const unifiedServer = (req,res) =>{
         const chosenHandler = typeof (router[trimmedPath]) !== "undefined" ? router[trimmedPath] : handlers.notFound
 
         // Construct the data object to send to the handler
-        var data = {
+        const data = {
             'trimmedPath': trimmedPath,
             'queryStringObject': queryStringObject,
             'method': method,
@@ -115,5 +127,7 @@ const unifiedServer = (req,res) =>{
 
 //Define a request router
 const router = {
-    'users': handlers.users
+    'users': handlers.users,
+    'tokens': handlers.tokens,
+    'eits': handlers.eits
 }
