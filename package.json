@@ -1,21 +1,15 @@
 {
-  "name": "Eit App API",
+  "name": "eit",
   "version": "1.0.0",
   "description": "Eit API",
   "author": "eadortsu",
   "private": true,
-  "engines": {
-    "node": "12.x"
-  },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon -r esm index.js --watch server",
     "build": "node index.js",
     "start": "node index.js"
   },
   "dependencies": {
-
   },
   "devDependencies": {
-
   }
 }
