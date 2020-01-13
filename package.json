@@ -1,15 +1,28 @@
 {
-  "name": "eit",
-  "version": "1.0.0",
-  "description": "Eit API",
-  "author": "eadortsu",
-  "private": true,
+  "name": "node-js-getting-started",
+  "version": "0.3.0",
+  "description": "A sample Node.js app using Express 4",
+  "engines": {
+    "node": "12.x"
+  },
+  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "build": "node app.js"
+    "start": "node index.js"
   },
   "dependencies": {
+
   },
   "devDependencies": {
-  }
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-getting-started"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+
+  ],
+  "license": "MIT"
 }
