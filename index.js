@@ -27,6 +27,8 @@ _data.update('users','newFile',{'fizz':'buzz'},(err)=> console.log('this was the
 _data.delete('users','newFile',(err)=> console.log('this was the error', err))
 
 
+ */
+
 _data.readAll('eits',(err,data)=> {
     if(!err){
         console.log('this was data', data)
@@ -34,7 +36,7 @@ _data.readAll('eits',(err,data)=> {
         console.log(err)
     }
 })
- */
+
 
 //console.log(helpers.getMostRecentFileName('eits'))
 
