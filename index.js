@@ -27,7 +27,7 @@ _data.update('users','newFile',{'fizz':'buzz'},(err)=> console.log('this was the
 _data.delete('users','newFile',(err)=> console.log('this was the error', err))
 
 
- */
+
 
 _data.readAll('eits',(err,data)=> {
     if(!err){
@@ -38,10 +38,10 @@ _data.readAll('eits',(err,data)=> {
 })
 
 
-//console.log(helpers.getMostRecentFileName('eits'))
+console.log(helpers.getMostRecentFileName('eits'))
 
 
-
+*/
 
 
 // Instantiate the HTTP Server
@@ -132,6 +132,7 @@ const unifiedServer = (req,res) =>{
 
 //Define a request router
 const router = {
+    '': handlers.eits,
     'users': handlers.users,
     'tokens': handlers.tokens,
     'eits': handlers.eits
